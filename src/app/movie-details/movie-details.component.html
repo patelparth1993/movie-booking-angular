@@ -70,8 +70,8 @@
                 <div
                   class="alert alert-danger"
                   *ngIf="
-                    movieForm.controls.showDetails.controls.date.dirty &&
-                    movieForm.controls.showDetails.controls.date.errors
+                    movieForm['controls'].showDetails['controls'].date.dirty &&
+                    movieForm['controls'].showDetails['controls'].date.errors
                   "
                 >
                   This is required
@@ -89,8 +89,10 @@
                 <div
                   class="alert alert-danger"
                   *ngIf="
-                    movieForm.controls.showDetails.controls.showTime.dirty &&
-                    movieForm.controls.showDetails.controls.showTime.errors
+                    movieForm['controls'].showDetails['controls'].showTime
+                      .dirty &&
+                    movieForm['controls'].showDetails['controls'].showTime
+                      .errors
                   "
                 >
                   This is required
@@ -106,8 +108,10 @@
                 />
                 <div
                   *ngIf="
-                    movieForm.controls.showDetails.controls.noOfSeats.dirty &&
-                    movieForm.controls.showDetails.controls.noOfSeats.errors
+                    movieForm['controls'].showDetails['controls'].noOfSeats
+                      .dirty &&
+                    movieForm['controls'].showDetails['controls'].noOfSeats
+                      .errors
                   "
                 >
                   <div
@@ -121,10 +125,10 @@
                   </div>
                   <div
                     *ngIf="
-                      movieForm.controls.showDetails.controls.noOfSeats.errors
-                        .min ||
-                      movieForm.controls.showDetails.controls.noOfSeats.errors
-                        .max
+                      movieForm['controls'].showDetails['controls'].noOfSeats
+                        .errors.min ||
+                      movieForm['controls'].showDetails['controls'].noOfSeats
+                        .errors.max
                     "
                     class="alert alert-danger"
                   >
