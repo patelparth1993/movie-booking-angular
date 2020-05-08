@@ -1,0 +1,41 @@
+<div class="panel">
+    <div class="panel-heading">
+        Booking Summary
+    </div>
+    <div class="panel-body">
+        You have selected following details
+        <div class="summ-details">
+            <strong>Theater Name: </strong>
+            <span>{{bookingSummary.TheatreName}}</span>
+        </div>
+        <div class="summ-details">
+            <strong>Location: </strong>
+            <span>{{bookingSummary.Location|titlecase}}</span>
+        </div>
+        <div class="summ-details">
+            <strong>Seats Booked: </strong>
+            <span>{{bookingSummary.SeatsBooked}}</span>
+        </div>
+        <div class="summ-details">
+            <strong>Movie Name: </strong>
+            <span>{{bookingSummary.MovieName}}</span>
+        </div>
+        <div class="summ-details">
+            <strong>Price: </strong>
+            <span>{{bookingSummary.Price|currency:'INR':'symbol'}}</span>
+        </div>
+        <div class="summ-details">
+            <strong>Show Date: </strong>
+            <span>{{bookingSummary.ShowDate|date:'mediumDate'}}</span>
+        </div>
+        <div class="summ-details">
+            <strong>Show Timing: </strong>
+            <span>{{bookingSummary.ShowTiming}}</span>
+        </div>
+        
+            <button class="btn btn-danger" (click)="goBack()">Modify Booking</button>
+
+            <button class="btn btn-success" (click)="checkout()">Confirm Booking</button>
+     
+    </div>
+</div>

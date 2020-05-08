@@ -1,0 +1,18 @@
+.panel-heading{
+    background-color: rgba(27, 120, 202, 1);
+    color:whitesmoke;
+    text-indent: 10px;
+}
+
+.panel{
+    border: 2px solid rgba(27, 120, 202, 1);
+    width: 500px;
+    height: auto;
+    background-color: rgba(240, 248, 255,0.5);
+    position: relative;
+    left: 425px;
+    top: 75px;
+}
+.panel-body{
+    padding:10px;
+}

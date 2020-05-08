@@ -1,0 +1,107 @@
+<div class="col-md-8 col-offset-4">
+    <div class="panel">
+        <div class="panel-heading">Movie Details</div>
+        <div class="panel-body">
+            <span class="thumbnail" *ngIf="myMovie">
+                <div class="image">
+                    <img [src]="myMovie.imageSrc" [title]="myMovie.name" 
+                    [style.width.px]='imageWidth' [style.height.px]='imageHeight' [style.margin.px]='imageMargin'>
+                </div>
+                <div class="caption">
+                    <div>
+                        <strong>Movie: </strong>
+                        {{myMovie.name}}
+                    </div>
+                    <span>
+                        <strong>Language:</strong>
+                        {{myMovie.language}}
+                    </span>
+                    <span>
+                        {{myMovie.dimension}}
+                    </span>
+                    <div>
+                        <movie-rating [rate]="myMovie.rating" class="ratingcolor"></movie-rating>
+                    </div>
+    
+                </div>
+            </span>
+        </div>
+    </div>
+
+</div>
+
+<div class="theatre" style="float:right">
+        <div class="panel">
+            <div class="panel-heading">Booking Details</div>
+            <div class="panel-body">
+                <form [formGroup]="movieForm">
+                    <div class="form-group">
+                        <strong>Select Your Theatre:</strong>
+                        <select formControlName="theatre" (change)="selectTheatre($event.target.value)">
+                            <option selected value=''>Select theatre</option>
+                            <option *ngFor="let theatre of theatreList;let i=index" >
+                                {{theatre.theaterName}}
+                            </option>
+                        </select>
+                    </div>
+                   
+                    <div *ngIf="selectedTheatre.length>0">
+                        <strong>Theatre selected: </strong>
+                        <span>{{selectedTheatre}}</span>
+
+                        <div class="form-group">
+                            <fieldset formGroupName="showDetails">
+                                <div class="form-group">
+                                    <strong>Date</strong>
+                                    <input class="form-control" type="date" formControlName="date">
+                                    <div class="alert alert-danger" *ngIf="movieForm.controls.showDetails.controls.date.dirty && movieForm.controls.showDetails.controls.date.errors">
+                                        This is required
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <strong>Show Timings</strong>
+                                    <select class="form-control" formControlName="showTime">
+                                        <option value="10:00AM">10:00AM</option>
+                                        <option value="12:00PM">12:00PM</option>
+                                        <option value="3:00PM">3:00PM</option>
+                                        <option value="7:30PM">7:30PM</option>
+                                    </select>
+                                    <div class="alert alert-danger" *ngIf="movieForm.controls.showDetails.controls.showTime.dirty && movieForm.controls.showDetails.controls.showTime.errors">
+                                            This is required
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <strong>Number Of Seats(2-10)</strong>
+                                    <input  class="form-control" type="number" formControlName="noOfSeats">
+                                    <div *ngIf="movieForm.controls.showDetails.controls.noOfSeats.dirty && movieForm.controls.showDetails.controls.noOfSeats.errors">
+                                        <div *ngIf="movieForm.controls.showDetails.controls.noOfSeats.errors.required" class="alert alert-danger" >
+                                                This is required
+                                        </div>
+                                        <div *ngIf="movieForm.controls.showDetails.controls.noOfSeats.errors.min || movieForm.controls.showDetails.controls.noOfSeats.errors.max"
+                                         class="alert alert-danger">
+                                                Enter number of seats within limit
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </fieldset>
+                        </div>
+                        <button type="button" class="btn btn-primary" [disabled]="!movieForm.valid" 
+                        (click)="bookSummary()">Proceed</button>
+                    </div>
+                </form>
+                <!--div *ngIf="theatreList && theatreList.length>0">
+                    <div *ngFor="let theatre of theatreList">
+                            <a appMovieList #dir1="highlightBG" (mouseover)="dir1.theatreBold()"
+                            (mouseleave)="dir1.theatreNormal()"
+                            (click)="selectTheatre(theatre.theaterName)">{{theatre.theaterName}}</a>
+                    </div>
+                </div-->
+            </div>
+        </div>
+    
+    </div>
+    
+    <button class="btn btn-primary goBack" style="float:right" (click)="goBack()">Check another movie</button>

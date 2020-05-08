@@ -1,0 +1,37 @@
+[
+    {
+    "name":"Harry Porter and The Deathly Hallows-2",
+    "language":"English",
+    "dimension":"3D",
+    "rating":5,
+    "imageSrc":"assets/imgs/images.jpeg.jpg"
+    },
+    {
+        "name":"Dark Knight",
+        "language":"English",
+        "dimension":"2D",
+        "rating":4,
+        "imageSrc":"assets/imgs/images1.jpeg.jpg"
+    },
+    {
+        "name":"Pk",
+        "language":"Hindi",
+        "dimension":"2D",
+        "rating":4,
+        "imageSrc":"assets/imgs/images3.jpeg.jpg"
+    },
+    {
+        "name":"Badla",
+        "language":"Hindi",
+        "dimension":"2D",
+        "rating":3,
+        "imageSrc":"assets/imgs/images4.jpeg.jpg"
+    },
+    {
+        "name":"Thor",
+        "language":"Telugu",
+        "dimension":"3D",
+        "rating":2,
+        "imageSrc":"assets/imgs/images5.jpeg.jpg"
+    }
+]

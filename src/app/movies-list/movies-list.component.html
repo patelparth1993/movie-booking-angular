@@ -1,0 +1,178 @@
+
+<div class="col-md-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">Movies now in theatres</div>
+            <div class="panel-body">
+                <div>
+                    
+                    <label style="font-size: 15px;">Filter by language:</label>
+                    <!--
+                    <input type="radio" name="filter" value='english'  (click)="filterBy($event.target.value)">English<br>
+                    <input type="radio" name="filter" value='hindi'  (click)="filterBy($event.target.value)">Hindi<br>
+                    <input type="radio" name="filter" value='telugu' (click)="filterBy($event.target.value)">Telugu<br>
+                    <input type="radio" name="filter" value='' (click)="filterBy($event.target.value)">All<br>
+                    -->
+
+
+                    <select style="position:relative;left:2px" (change)="filterBy($event.target.value)">
+                        <option value='' selected>All</option>
+                        <option value="english">English</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="hindi">Hindi</option>
+                    </select>
+
+                    <label style="font-size: 15px;position:relative;left:5px;">Sort By:</label>
+                    <select style="position:relative;left:5px" [(ngModel)]="sortByOption">
+                        <option value="rating" selected>Rating</option>
+                        <option value="name">Name</option>
+                    </select>
+                </div>
+                
+
+                <div class="input-group pull-right searchboxpos" >
+                    <input class="pull-right searchpos" type="text" placeholder='Search' [(ngModel)]="searchtext" (change)="searchMovie()" >
+                    <span class="input-group-btn searchiconpos">
+                        <i class="fa fa-search iconpos" aria-hidden="true"></i>
+                    </span>
+                </div>
+                
+
+
+                <div *ngIf="MoviesList && MoviesList.length">
+                    <div class="row" *ngFor="let movie of MoviesList|orderBy:sortByOption;let i=index" [hidden]="(i%4)>0">
+                   
+                        <div class="col-md-3">
+                            <span class="thumbnail text-center">
+                                <div class="image">
+                                    <img [src]="movie.imageSrc" [title]="movie.name" 
+                                    [style.width.px]='imageWidth' [style.height.px]='imageHeight' [style.margin.px]='imageMargin'>
+                                </div>
+                                <div class="caption">
+                                    <div appMovieList #dir1="highlightBG" (mouseover)="dir1.onMouseEnter()" 
+                                    (mouseleave)="dir1.onMouseLeave()">
+                                        <strong >{{movie.name}}</strong>
+                                    </div>
+                                    <span>
+                                        {{movie.language}}
+                                    </span>
+                                    <span>
+                                        {{movie.dimension}}
+                                    </span>
+                                    <div>
+                                        <movie-rating [rate]="movie.rating" class="ratingcolor"></movie-rating>
+                                    </div>
+                                    
+                                    <div>
+                                        <button type="button" (click)="book(movie.name)">Book</button>
+                                    </div>
+                                   
+                                </div>
+                                <div class="reomm-tag col-sm-6" [hidden]="(movie.rating>=4)?false:true">
+                                       Recommended
+                                </div>
+                                
+                            </span>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div *ngIf="MoviesList[i+1]" class="thumbnail text-center">
+                                <div class="image">
+                                    <img [src]="MoviesList[i+1].imageSrc" [title]="MoviesList[i+1].name" 
+                                    [style.width.px]='imageWidth' [style.height.px]='imageHeight' [style.margin.px]='imageMargin'>
+                                </div>
+                                <div class="caption">
+                                    <div appMovieList #dir1="highlightBG" (mouseover)="dir1.onMouseEnter()" 
+                                    (mouseleave)="dir1.onMouseLeave()">
+                                            <strong>{{MoviesList[i+1].name}}</strong>
+                                    </div>
+                                    <span>
+                                        {{MoviesList[i+1].language}}
+                                    </span>
+                                    <span>
+                                        {{MoviesList[i+1].dimension}}
+                                    </span>
+                                    <div>
+                                        <movie-rating [rate]="MoviesList[i+1].rating" class="ratingcolor"></movie-rating>
+                                    </div>
+                                    
+                                    <div>
+                                        <button type="button" (click)="book(MoviesList[i+1].name)">Book</button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="reomm-tag col-sm-6" [hidden]="(MoviesList[i+1].rating>=4)?false:true">
+                                        Recommended
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                                <div *ngIf="MoviesList[i+2]" class="thumbnail text-center">
+                                    <div class="image">
+                                        <img [src]="MoviesList[i+2].imageSrc" [title]="MoviesList[i+2].name" 
+                                        [style.width.px]='imageWidth' [style.height.px]='imageHeight' [style.margin.px]='imageMargin'>
+                                    </div>
+                                    <div class="caption">
+                                        <div appMovieList #dir1="highlightBG" (mouseover)="dir1.onMouseEnter()" 
+                                        (mouseleave)="dir1.onMouseLeave()">
+                                                <strong>{{MoviesList[i+2].name}}</strong>
+                                        </div>
+                                        <span>
+                                            {{MoviesList[i+2].language}}
+                                        </span>
+                                        <span>
+                                            {{MoviesList[i+2].dimension}}
+                                        </span>
+                                        <div>
+                                            <movie-rating [rate]="MoviesList[i+2].rating" class="ratingcolor"></movie-rating>
+                                        </div>
+                                        <div>
+                                            <button type="button" (click)="book(MoviesList[i+2].name)">Book</button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="reomm-tag col-sm-6" [hidden]="(MoviesList[i+2].rating>=4)?false:true">
+                                            Recommended
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-3">
+                                <div *ngIf="MoviesList[i+3]" class="thumbnail text-center">
+                                    <div class="image">
+                                        <img [src]="MoviesList[i+3].imageSrc" [title]="MoviesList[i+3].name" 
+                                        [style.width.px]='imageWidth' [style.height.px]='imageHeight' [style.margin.px]='imageMargin'>
+                                    </div>
+                                    <div class="caption">
+                                        <div appMovieList #dir1="highlightBG" (mouseover)="dir1.onMouseEnter()" 
+                                        (mouseleave)="dir1.onMouseLeave()">
+                                                <strong>{{MoviesList[i+3].name}}</strong>
+                                        </div>
+                                        <span>
+                                            {{MoviesList[i+3].language}}
+                                        </span>
+                                        <span>
+                                            {{MoviesList[i+3].dimension}}
+                                        </span>
+                                        <div>
+                                            <movie-rating [rate]="MoviesList[i+3].rating" class="ratingcolor"></movie-rating>
+                                        </div>
+                                        
+                                        <div>
+                                            <button type="button" (click)="book(MoviesList[i+3].name)">Book</button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div [hidden]="(MoviesList[i+3].rating>=4)?false:true" class="reomm-tag col-sm-6" >
+                                            Recommended
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+</div>

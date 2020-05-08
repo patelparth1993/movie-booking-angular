@@ -1,0 +1,21 @@
+.navbar {
+    margin-right: 0px !important;
+}
+.navbar-inverse {
+    background: #000000;
+  }
+
+#logoutBtn,#welcomeMsg{
+    position: relative;
+    right: 10px;
+    height: 32px;
+    top: 2px;
+}
+#logoutMsg
+{
+    color:green;
+    font-weight: bold;
+    position: absolute;
+    left: 535px;
+    top: 100px;
+}

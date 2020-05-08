@@ -1,0 +1,29 @@
+.panel-heading,.custom {
+    height: 35px;
+    background-color: rgba(27, 120, 202, 1);
+    color:whitesmoke;
+    text-indent: 10px;
+}
+
+.col-md-5{
+    width: 50%;
+    /* align-items: center; */
+    margin: auto;
+    /* position: absolute; */
+    /* left: 450px; */
+    /* top: 50px; */
+    /* padding-left: 0px; */
+    top: 90px;
+}
+
+.panel{
+    border: 2px solid rgba(27, 120, 202, 1);
+    background-color: rgba(240, 248, 255,0.6);
+    
+}
+.panel-body{
+    padding:10px;
+}
+.error{
+    color:red
+}

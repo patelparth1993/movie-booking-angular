@@ -1,0 +1,74 @@
+[
+    {
+        "theaterName":"Cinepolis Banglore",
+        "MovieName":"Pk",
+        "City":"Banglore",
+        "price": 300
+    },
+    {
+        "theaterName":"Cinepolis Banglore",
+        "MovieName":"Badla",
+        "City":"Banglore",
+        "price": 400
+    },
+    {
+        "theaterName":"Inox Banglore",
+        "MovieName":"Harry Porter and The Deathly Hallows-2",
+        "City":"Banglore",
+        "price":200
+    },
+    {
+        "theaterName":"PVR Banglore",
+        "MovieName":"Dark Knight",
+        "City":"Banglore",
+        "price":200
+    },
+    {
+        "theaterName":"Big Cinema Delhi",
+        "MovieName":"Pk",
+        "City":"Delhi",
+        "price":200
+    },
+    {
+        "theaterName":"Inox Delhi",
+        "MovieName":"Badla",
+        "City":"Delhi",
+        "price": 400
+    },
+    {
+        "theaterName":"Inox Delhi",
+        "MovieName":"Harry Porter and The Deathly Hallows-2",
+        "City":"Delhi",
+        "price":500
+    },
+    {
+        "theaterName":"PVR Delhi",
+        "MovieName":"Dark Knight",
+        "City":"Delhi",
+        "price": 300
+    },
+    {
+        "theaterName":"Cinepolis Mumbai",
+        "MovieName":"Harry Porter and The Deathly Hallows-2",
+        "City":"Mumbai",
+        "price": 300
+    },
+    {
+        "theaterName":"Cinepolis Mumbai",
+        "MovieName":"Dark Knight",
+        "City":"Mumbai",
+        "price": 400
+    },
+    {
+        "theaterName":"Inox Mumbai",
+        "MovieName":"Pk",
+        "City":"Mumbai",
+        "price":200
+    },
+    {
+        "theaterName":"PVR Mumbai",
+        "MovieName":"Badla",
+        "City":"Mumbai",
+        "price":200
+    }
+]

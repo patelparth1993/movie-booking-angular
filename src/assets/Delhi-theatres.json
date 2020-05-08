@@ -1,0 +1,22 @@
+[
+    {
+        "theaterName":"Big Cinema Delhi",
+        "MovieName":"Pk",
+        "price":200
+    },
+    {
+        "theaterName":"Inox Delhi",
+        "MovieName":"Badla",
+        "price": 400
+    },
+    {
+        "theaterName":"Inox Delhi",
+        "MovieName":"Harry Porter and The Deathly Hallows-2",
+        "price":500
+    },
+    {
+        "theaterName":"PVR Delhi",
+        "MovieName":"Dark Knight",
+        "price": 300
+    }
+]

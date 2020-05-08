@@ -1,0 +1,37 @@
+.panel-heading{
+    background-color: rgba(27, 120, 202, 1);
+    color:whitesmoke;
+    text-indent: 10px;
+}
+
+.panel{
+    border: 2px solid rgba(27, 120, 202, 1);
+    width:335px;
+    height: auto;
+    background-color: rgba(240, 248, 255,0.5);
+    left: 310px;
+    position: relative;
+}
+.panel-body{
+    padding:10px;
+}
+.theatre{
+    position: fixed;
+    top: 59px;
+    left: 355px;
+}
+a{
+    cursor:pointer;
+    font-size: 15px;
+}
+.form-control{
+    width:200px;
+}
+.alert{
+    width: 200px;
+}
+.goBack{
+    position: absolute;
+    left:745px;
+    top:560px;
+}

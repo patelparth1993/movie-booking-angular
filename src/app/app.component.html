@@ -1,0 +1,19 @@
+<nav class="nav navbar navbar-inverse">
+  <div class='container-fluid'>
+    <span class="navbar-brand" style="color:whitesmoke">Infy Movie Ticket Booking</span>
+    
+    <span class="navbar-brand navbar-right">
+      <span id="welcomeMsg" style="color:red;padding-right: 5px" [hidden]="!isLoggedIn">Welcome {{userLoggedIn}}</span>
+      <button type='button' id="logoutBtn" [hidden]="!isLoggedIn" (click)="logout()">Logout</button>
+      <i class="fa fa-map-marker" style="font-size:28px;color:whitesmoke;padding-right: 5px;"></i>
+      <select  [(ngModel)]="location" (change)="onLocationChange()">
+        <option value='banglore' selected>Banglore</option>
+        <option value='mumbai'>Mumbai</option>
+        <option value='delhi'>Delhi</option>
+        <option value='chennai'>Chennai</option>
+      </select>
+    </span>
+  </div>
+</nav>
+<span id="logoutMsg" *ngIf="logoutMsg.length>0" [hidden]="isLoggedIn">{{logoutMsg}}</span>
+<router-outlet></router-outlet>
